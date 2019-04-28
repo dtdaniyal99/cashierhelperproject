@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Compiled and minified JavaScript -->
+   <style>
+    .form1{
+    display: grid;
+    grid-template-columns: 1fr 1fr ; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "coin1" "coin2"
+    "coin5" "nt10"
+    "nt20" "nt50"
+    "nt100" "nt500"
+    "nt1000" "nt5000"
+    "stbtn" "stbtn";
+    /*   position: absolute; */
+    padding: 0%;
+    top: 0vh;
+    }
+    .coin1{
+     grid-area: coin1; 
+  }
+  .coin2{
+    grid-area: coin2; 
+ }
+ .coin5{
+    grid-area: coin5; 
+ }
+ .nt10{
+    grid-area: nt10;
+ }
+ .nt20{
+    grid-area: nt20;
+ }
+ .nt50{
+    grid-area: nt50;
+ }
+ .nt100{
+    grid-area: nt100;
+ }
+ .nt500{
+    grid-area: nt500;
+ }
+ .nt1000{
+    grid-area: nt1000;
+ }
+ .nt5000{
+    grid-area: nt5000;
+ }
+ .stbtn{
+     grid-area: stbtn;
+ }
+    
+   </style>
+   
+</head>
+<body>
+    <div class="form1" action="">
+        <div class="input-field" >
+                <input  type="text" id="coin1" class="validate coin1">
+                <label for="username">Enter 1rs coin</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="coin2" class="validate coin2">
+                <label for="username">Enter 2rs coin</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="coin5" class="validate coin5">
+                <label for="username">Enter 5rs coin</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt10" class="validate nt10">
+                <label for="username">Enter 10rs Note</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt20" class="validate nt20">
+                <label for="username">Enter 20rs Note</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt50" class="validate nt50">
+                <label for="username">Enter 50rs Note</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt100" class="validate nt100">
+                <label for="username">Enter 100rs Note</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt500" class="validate nt500">
+                <label for="username">Enter 500rs Note</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt1000" class="validate nt1000">
+                <label for="username">Enter 1000rs Note</label>
+            </div>
+            <div class="input-field" >
+                <input  type="text" id="nt5000" class="validate nt5000">
+                <label for="username">Enter 5000rs Note</label>
+            </div>
+            <div>
+                <a href="" class="button stbtn" onclick="">Submit</a>
+            </div>
+                        
+          </div>
+ <script>
+  
+ </script>     
+</body>
+</html>

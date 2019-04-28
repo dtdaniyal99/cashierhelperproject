@@ -1,0 +1,250 @@
+ body{
+    background-color: antiquewhite;
+    
+} 
+.mainscreen{
+    position: absolute;
+   /*  display: grid; */
+     /* background-color:blue; */
+    height: 90vh;
+    width: 93vw;
+    top: 10vh;
+    left: 7vw;
+    
+
+}
+#result{
+   
+     background-color: lightblue; 
+    
+     display: inline-block;
+    font-style: bold;
+    font-size: 20px;
+    border-radius: 5px; 
+    min-width: 10vh;
+}
+.info{
+    /* background-color: blueviolet; */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px;
+}
+ body{
+    background-color:  rgb(223,236,239);
+    background-image: linear-gradient(to bottom, rgb(223,236,239),rgb(229,219,219));
+    height: 100vh;
+}
+    .wraper{
+        display: block;
+        margin-top: 15vh;
+        margin-left: 30vw;
+        height: 70vh;
+        width: 40vw;
+        background-color: aqua;
+        border-radius: 10px;
+        overflow: hidden;
+        
+    }
+    .color{
+        background-color: rgb(14,183,163);
+        background-image: linear-gradient(to right,rgb(14,183,163),rgb(9,213,144));
+    }
+    .header{
+        height: 10vh;
+        width:40vw;
+    }
+     .panel{
+        position: relative;
+        height: 60vh;
+        width: 40vw;
+        background-color: white; 
+        text-align: center;
+    }
+    .text{
+        position: relative;
+        text-align: center;
+        top: 3vh;
+        font-size: 1.5em;
+        color: white;
+    }
+    form{
+        position: relative;
+        padding: 5%;
+        top: 10vh;
+    }
+    .button {
+       
+        border: none;
+        color: white;
+         padding: 13px 70px; 
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: white; 
+        color: black; 
+        border: 2px solid rgb(14,183,163);
+        border-radius: 30px;
+    }
+    .button:hover {
+        background-color: rgb(14,183,163);
+        background-image: linear-gradient(to right,rgb(14,183,163),rgb(9,213,144));
+        color: white;
+}
+.mainpageheader{
+    left: 7vw;
+
+    position: relative;
+     width: 93vw; 
+    height: 10vh;
+    background-color: white;
+     
+}
+.mainpageheader span{
+    position: absolute;
+    left: 35%;
+    top: 2vh;
+    font-size: 200%;
+    font-family: 'Kaushan Script', cursive;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    
+  }
+  #sidebar{
+    position: relative;
+    width: 14vw;
+    height: 90vh;
+    background-color: black;
+    left: -07vw;
+    transition: all 500ms linear;
+  } 
+  #sidebar:hover{
+    left: 0px;
+  }
+  #sidebar ul li{
+    color: rgba(230, 230, 230, 0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100,100, 0.3);
+  }
+  .mainpageheader .logo{
+      position: fixed;
+      height: 10vh;
+      width: 7vw;
+      left: 0vw;
+      background-color: rgb(1, 100, 95);
+  }
+  .showusername{
+      height: 7vh;
+      width: 25vw;
+      position: absolute;
+      display: inline-block;
+      border-radius: 10px;
+      /* background-color:black; */
+      text-align: center;
+      left: 30vw;
+  }
+  #display{
+      display: flex;
+  }
+  .size{
+      position: relative;
+     
+      margin: 0px;
+      padding: 0px;
+      height: 83vh;
+      width: 46.5vw;
+      top: 7vh;
+     /* background-color:blue;  */
+   /*  text-align: center; */
+  }
+  .size2{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+      left: 46.5vw;
+      border: 1px solid;
+      text-align: center;
+      
+  }
+  .input-field{
+     
+     /*  left: 5vw; */
+      margin: 10px;
+      padding: 0px;
+      width: 20vw;
+  }
+  .form1{
+    display: grid;
+    grid-template-columns: 1fr 1fr ; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "coin1 coin2"
+    "coin5 nt10"
+    "nt20 nt50"
+    "nt100 nt500"
+    "nt1000 nt5000"
+    "stbtn stbtn";
+       position: absolute; 
+    padding: 0%;
+    top: 0vh;
+  }
+  .form1 .stbtn{
+      position: relative;
+     padding: 12px 20px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+  }
+   /* .form1 div:nth-child(even){
+    background-color: purple;
+  } 
+  .form1 div:nth-child(odd){
+    background-color: pink;
+  } */
+  /* .msstock{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+  } */
+.coin1{
+     grid-area: coin1; 
+  }
+  .coin2{
+    grid-area: coin2; 
+ }
+ .coin5{
+    grid-area: coin5; 
+ }
+ .nt10{
+    grid-area: nt10;
+ }
+ .nt20{
+    grid-area: nt20;
+ }
+ .nt50{
+    grid-area: nt50;
+ }
+ .nt100{
+    grid-area: nt100;
+ }
+ .nt500{
+    grid-area: nt500;
+ }
+ .nt1000{
+    grid-area: nt1000;
+ }
+ .nt5000{
+    grid-area: nt5000;
+ }
+ .stbtn{
+     grid-area: stbtn;
+ }

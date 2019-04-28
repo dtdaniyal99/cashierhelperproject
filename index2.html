@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./materialize/css/materialize.css">
+    
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+</head>
+<body> 
+    <div class="mainpageheader z-depth-5"><span>Wel come to cashiers display</span>
+        <div class="logo"></div>
+    </div>
+    
+   <div id="display">
+        <div id="sidebar">
+            <ul>
+               <a href="./index.html"> <li id="Dashbord">DashBord</li></a>
+               <a href="./index2.html"> <li id="Stock">Stock</li></a>
+                <li>contact</li>
+            </ul>
+        </div>        
+        <div class="mainscreen msstock">
+            <div class="showusername">
+                <div  class="info" >Cashier Name </div>
+                <div id="result" ></div>
+            </div>
+            <div class="size">
+                <form class="form1" action="">
+                        <div class="input-field coin1" >
+                                <input  type="text" id="0" class="validate ">
+                                <label for="username">Enter 1rs coin</label>
+                            </div>
+                            <div class="input-field coin2" >
+                                <input  type="text" id="1" class="validate ">
+                                <label for="username">Enter 2rs coin</label>
+                            </div>
+                            <div class="input-field coin5" >
+                                <input  type="text" id="2" class="validate">
+                                <label for="username">Enter 5rs coin</label>
+                            </div>
+                            <div class="input-field nt10" >
+                                <input  type="text" id="3" class="validate">
+                                <label for="username">Enter 10rs Note</label>
+                            </div>
+                            <div class="input-field nt20" >
+                                <input  type="text" id="4" class="validate">
+                                <label for="username">Enter 20rs Note</label>
+                            </div>
+                            <div class="input-field nt50" >
+                                <input  type="text" id="5" class="validate">
+                                <label for="username">Enter 50rs Note</label>
+                            </div>
+                            <div class="input-field nt100" >
+                                <input  type="text" id="6" class="validate ">
+                                <label for="username">Enter 100rs Note</label>
+                            </div>
+                            <div class="input-field nt500" >
+                                <input  type="text" id="7" class="validate">
+                                <label for="username">Enter 500rs Note</label>
+                            </div>
+                            <div class="input-field nt1000" >
+                                <input  type="text" id="8" class="validate ">
+                                <label for="username">Enter 1000rs Note</label>
+                            </div>
+                            <div class="input-field nt5000" >
+                                <input  type="text" id="9" class="validate ">
+                                <label for="username">Enter 5000rs Note</label>
+                            </div>
+                            <div class="stbtn">
+                                <a href="" class="button stbtn" onclick=" getinput()">Submit</a>
+                            </div>
+                                        
+                </form>
+                
+            </div>
+            <div class="size size2"></div>  
+        </div> 
+   </div>
+    
+      <script src="./materialize/js/materialize.js"></script>
+      <script>
+          document.getElementById("result").innerHTML = localStorage.getItem('uname');
+          stockaray=[];
+          console.log(stockaray);  
+          function getinput(){
+             /*  document.getElementById('coin1').value
+              document.getElementById('coin2').value
+              document.getElementById('coin5').value
+              document.getElementById('nt10').value
+              document.getElementById('nt20').value
+              document.getElementById('nt50').value
+              document.getElementById('nt100').value
+              document.getElementById('nt500').value
+              document.getElementById('nt1000').value
+              document.getElementById('nt5000').value */
+               for(var i = 0; i<10;i++){ 
+                var orc =  document.getElementById([i]).value
+                  stockaray.push(orc);
+                  
+               } 
+              
+             
+          }
+          for(var j = 0; j < stockaray.length;j++){
+              document.write([j]);
+          }
+         
+      </script>
+</body>
+</html>

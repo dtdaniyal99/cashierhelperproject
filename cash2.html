@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="cash-01" action="javascript:void(0)" onsubmit="generate()">
+        <h1> Availble Cash Amounts </h1>
+        Re 1 x : <input type="text" name="" id="cash-0"> <br>
+        Rs 2 x : <input type="text" name="" id="cash-1"> <br>
+        Rs 5 x : <input type="text" name="" id="cash-2"> <br>
+        Rs 10 x : <input type="text" name="" id="cash-3"> <br>
+        Rs 20 x : <input type="text" name="" id="cash-4"> <br>
+        Rs 50 x : <input type="text" name="" id="cash-5"> <br>
+        Rs 100 x : <input type="text" name="" id="cash-6"> <br>
+        Rs 500 x : <input type="text" name="" id="cash-7"> <br>
+        Rs 1000 x : <input type="text" name="" id="cash-8"> <br>
+        <input type="submit">
+    </form>
+    <table style="border:1px solid black; margin-top:5px;" id="myTable">
+        <tr>
+            <th>Cash</th>
+            <th>Stock</th>
+        </tr>
+
+    </table>
+
+    <form id="generator" action="javascript:void(0)" onsubmit="MyTable2.result()"></form>
+</body>
+
+
+<script>
+
+// function for generating Stock; 
+    function generate() {
+        cashstock0 = Number(document.getElementById("cash-0").value);
+        cashstock1 = Number(document.getElementById("cash-1").value);
+        cashstock2 = Number(document.getElementById("cash-2").value);
+        cashstock3 = Number(document.getElementById("cash-3").value);
+        cashstock4 = Number(document.getElementById("cash-4").value);
+        cashstock5 = Number(document.getElementById("cash-5").value);
+        cashstock6 = Number(document.getElementById("cash-6").value);
+        cashstock7 = Number(document.getElementById("cash-7").value);
+        cashstock8 = Number(document.getElementById("cash-8").value);
+
+        //cash array
+        arr1 = [1000, 500, 100, 50, 20, 10, 5, 2, 1];
+        //stock array
+        arr2 = [cashstock0, cashstock1, cashstock2, cashstock3, cashstock4, cashstock5, cashstock6, cashstock7, cashstock8];
+        myTablee = document.getElementById("myTable");
+
+        function CashCounter(cash, stock) {
+            //result array 
+            this.resultArr = [];
+            this.cash = cash;
+            this.stock = stock;
+            this.table2 = function () {
+                for (i = 0; i < this.cash.length; i++) {
+
+                    ///generating stock and cash in to a table
+                    var k = 0;
+                    var l = 1;
+                    var newTR = myTablee.insertRow(i);
+                    var newTD1 = newTR.insertCell(0);
+                    var newTD2 = newTR.insertCell(-1);
+                    newTD1.innerHTML = this.cash[i];
+                    newTD2.innerHTML = this.stock[i]
+                   
+                }
+            }
+            myform = document.getElementById("generator");
+            myform.innerHTML += `Received Money <input type="text" name="" id="receive"> <br> 
+          Shopping <input type="text" name="" id="shop"> <br>
+          <input type="submit">
+          <h1 id="return"> </h1>
+          <table id="resulttable"> 
+            <tr> <th> Cash </th> <th> Paid</th> <th> Stock </td> </tr>
+            
+            </table>`
+        }
+
+        // function for getting total amount and deducted account & evaluating new total
+        CashCounter.prototype.result = function () {
+            this.totalamt = Number(document.getElementById("receive").value);
+            this.shopping = Number(document.getElementById("shop").value);
+            this.money = document.getElementById("return");
+
+            this.cashamt = (this.totalamt - this.shopping);
+            this.money.innerHTML = "Balance = " + this.cashamt;
+            console.log(this.cashamt);
+            this.resultArr = [];
+            i = 0;
+
+            // loop for getting Cash array and denomination of money
+            while (this.cashamt != 0) {
+
+               
+                this.resultArr.push(Math.floor(this.cashamt / this.cash[i]));
+
+                this.cashamt = this.cashamt % this.cash[i];
+
+
+                
+                i++
+            }
+
+            // to tackle undefined in result array
+            for (i=0;i<this.cash.length;i++){
+                if (this.resultArr[i]===undefined){
+                this.resultArr[i]===0;
+                this.resultArr.push(0);
+               
+            }
+            };
+
+            console.log(this.resultArr);
+
+            // for (i=0 ; i < this.cash.length ;i++){
+            //     if (this.resultArr[i]=+1){
+            //         this.stock[i]=-1
+            //     }
+            // }
+
+            resulttable = document.getElementById("resulttable");
+
+                // to put result array into table
+            for (i = 0; i < this.cash.length; i++) {
+                
+                var k = 0;
+                var l = 1;
+                var newTR1 = resulttable.insertRow(i);
+                var newTD11 = newTR1.insertCell(0);
+                var newTD22 = newTR1.insertCell(-1);
+                var newTD3 = newTR1.insertCell(2);
+                newTD11.innerHTML = this.cash[i];
+                newTD22.innerHTML = this.resultArr[i];
+                newTD3.innerHTML = this.stock[i]
+               
+                console.log(this.stock[i])
+                if (this.stock[i]>this.resultArr[i]){
+                    newTD3.innerHTML = this.stock[i] - this.resultArr[i];
+                }
+                else{newTD3.innerHTML="Insufficent Balance"}
+            }
+
+            console.log(this.cashamt);
+
+            // for (i=0;i<this.stock.length;i++){
+            //     j=0 
+            //     if(this.resultArr[i]===j){
+            //         this.stock[i]-j
+            //     }
+            //     j++
+            // }
+
+        }
+
+        MyTable2 = new CashCounter(arr1, arr2);
+        MyTable2.table2();
+
+    }
+
+</script>
+
+</html>
